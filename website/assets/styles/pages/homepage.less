@@ -1,0 +1,214 @@
+#homepage {
+
+  h3 {
+    font-weight: @bold;
+    line-height: 40px;
+  }
+
+  h6 {
+    font-family: Nunito;
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+
+  .btn {
+    font-family: @main-font;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    border-radius: 8px;
+  }
+
+  .btn-primary {
+    background-color: #ff5c83;
+    border-color: #ff5c83;
+    &:hover {
+      background-color: darken(#ff5c83, 10%);
+      border-color: darken(#ff5c83, 10%);
+    }
+  }
+
+  .hero-banner {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(173.74deg, #1F1D42 4.94%, #00FFF0 87.78%);
+    background-size: 100% 85%;
+    background-repeat: no-repeat;
+    color: #FFFFFF;
+    p {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+
+  .hero-clouds {
+    background-image: url('/images/clouds-1600x320@2x.png');
+    background-position: bottom 150px center;
+    background-size: 1600px auto;
+    background-repeat: repeat-x;
+
+  }
+
+  .log-destination-grid {
+    max-width: 736px;;
+  }
+
+  .log-destination {
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    padding-left: 16px;
+    padding-right: 16px;
+    border: 1px solid #E2E4EA;
+    border-radius: 12px;
+    img {
+      width: 48px;
+      height: auto;
+    }
+  }
+
+  .tweets {
+    max-width: 1200px;
+  }
+
+  .tweet {
+    flex: 0 1 380px;
+    text-align: left;
+    background: #FFFFFF;
+    padding: 40px;
+    margin-bottom: 30px;
+    border: 1px solid #E2E4EA;
+    box-sizing: border-box;
+    box-shadow: 0px 7px 3px -5px rgba(25, 33, 71, 0.1);
+    border-radius: 16px;
+  }
+
+  .avatar-frame {
+    width: 48px;
+    height: 48px;
+    position: relative;
+    justify-content: center;
+    align-content: center;
+    overflow: hidden;
+    background-color: black;
+    border-radius: 50%;
+    &:hover {
+      cursor: pointer;
+    }
+    img {
+      display: inline;
+      width: auto;
+      height: 100%;
+    }
+  }
+
+  .logos {
+    max-width: 360px;
+    img {
+      width: auto;
+      height: 35px;
+    }
+  }
+
+  // TODO: dedupe this into a mixin and use from here and in pricing.less, or use existing transition mixin
+  [purpose='animated-arrow-button'] {
+    padding-right: 40px;
+    cursor: pointer;
+    position: relative;
+    width: auto;
+    color: #192147;
+    font-weight: bold;
+    user-select: none;
+    transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    -ms-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+    -webkit-transition: 0.2s ease-in-out;
+  }
+
+  [purpose='animated-arrow-button']:before {
+    content: url('/images/arrow-right-16x16@2x.png');
+    transform: scale(0.5);
+    position: absolute;
+    top: 12px;
+    left: 80%; // <--- here
+    transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    -ms-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+    -webkit-transition: 0.2s ease-in-out;
+    /*   opacity: 0; */
+  }
+
+  [purpose='animated-arrow-button']:hover:before {
+    left: 82%; // <--- here
+    transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    -ms-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+    -webkit-transition: 0.2s ease-in-out;
+    /*   opacity:1; */
+  }
+
+  @media (max-width: 1200px) {
+    .tweets {
+      max-width: 390px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .log-destination-grid {
+      max-width: 976px;
+    }
+    .log-destination {
+      flex: 0 0 228px;
+    }
+    .logos {
+      max-width: 720px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-clouds {
+      background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 23%, rgba(255, 255, 255, 0) 48%, rgba(255, 255, 255, 0) 100%);
+    }
+  }
+
+  @media (min-width: 600px) and (max-width: (767px)) {
+    .log-destination {
+      flex: 0 0 280px;
+      p {
+        display: flex;
+      };
+    }
+  }
+
+  @media (max-width: 600px) {
+    .log-destination {
+      flex-basis: 160px;
+      p {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: 576px) {
+    h1 {
+      font-size: 32px;
+      line-height: 36px;
+    }
+    h6 {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+
+  @media (max-width: 355px) {
+    .log-destination {
+      flex-basis: 80px;
+    }
+  }
+
+}
